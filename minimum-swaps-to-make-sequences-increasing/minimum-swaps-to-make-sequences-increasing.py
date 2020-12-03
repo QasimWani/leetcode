@@ -8,6 +8,7 @@ class Solution:
         swap[0] = 1 #base case.
         no_swap[0] = 0 #base case.
         
+        #iterate
         for i in range(1, len(A)):
             a1, a2 = A[i-1], A[i]
             b1, b2 = B[i-1], B[i]
