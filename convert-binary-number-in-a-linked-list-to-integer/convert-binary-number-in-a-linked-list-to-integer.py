@@ -17,7 +17,7 @@ class Solution:
             temp = temp.next
         temp = head
         value = 0
-        size -= 1
+size -= 1
         while(temp is not None):
             value += temp.val * 2**size
             size -= 1
