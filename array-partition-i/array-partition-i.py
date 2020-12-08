@@ -1,8 +1,6 @@
 #Time: O(nlogn)
 #Space: O(1)
 ​
-#### Temp...
-​
 class Solution:
     def arrayPairSum(self, nums: List[int]) -> int:
         n = len(nums)//2
