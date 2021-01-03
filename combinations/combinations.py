@@ -57,3 +57,24 @@ class Solution:
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        return combinations(range(1, n+1), k) #bruh
+​
