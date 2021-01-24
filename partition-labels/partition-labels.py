@@ -34,6 +34,5 @@ class Solution:
             elif(end > last and start > first): #new ending point
                 last = end
                 lengths[-1] = last - first + 1
-                
         
         return lengths
