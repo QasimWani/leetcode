@@ -1,3 +1,6 @@
+#Time = O(n)
+#Space = O(n)
+​
 class Solution:
     def partitionLabels(self, S: str) -> List[int]:
         #alright, so this seems like a simple multuple pointer problem
@@ -8,8 +11,6 @@ class Solution:
         #length w.r.t last index and move the first index to closed index
         #and reset the closed index. And I continue this process until the
         #end of the array.
-        ### Now, in terms of approach, I'm thinking of a semi
-        ### optimized solution of of O(n) time and O(n) space.
         
         arr_set = {} #map each character with first and last index.
         
@@ -24,7 +25,6 @@ class Solution:
         #now, we need to find the union of all sets.
         first, last = 0, 0
         lengths = [] #objective subarrays
-        print(arr_set)
         for num in arr_set.values():
             start, end = num
             if(start >= last): #new bound
@@ -35,7 +35,6 @@ class Solution:
                 last = end
                 lengths[-1] = last - first + 1
                 
-            print(start, end, first, last)
         
         return lengths
         
