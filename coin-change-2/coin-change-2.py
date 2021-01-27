@@ -11,8 +11,8 @@ class Solution:
         #Using Knapsack approach, the value of each item is 1. the weight is defined by the coins list.
         #however, the optimization algorithm is as follows: v[i, j] = max(v[i-1,j], v[i-1,j] + v[i,j-coins[i - 1]])
         
-        grid = [ [0 for _ in range(amount + 1)] for _ in range(len(coins) + 1)]
-        
+        grid = [ [0]*(amount + 1) for _ in range(len(coins) + 1)]
+​
         #augment first column of each row
         for i, _ in enumerate(grid):
             grid[i][0] = 1
@@ -21,5 +21,5 @@ class Solution:
         for i in range(1, len(grid)):
             for j in range(1, len(grid[0])):
                 grid[i][j] = max(grid[i - 1][j], grid[i - 1][j] + grid[i][j - coins[i-1]] if j - coins[i-1] >= 0 else 0)
-                
+​
         return grid[-1][-1]
