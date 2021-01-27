@@ -16,16 +16,15 @@ class Solution:
         #where m = number of weights and n = number of values. Here m = 1/2 ∑ nums[i].
         #and n = len(nums).
         
-        m = sum(nums) / 2 if sum(nums) % 2 == 0 else None
+        m = sum(nums) / 2
         
-        
-        if(m is None): #if sum is odd, no partition is possible
+        if(m != int(m)): #if half is a fraction, no partition of integers can generate that result
             return False
         
         m = int(m) #typecast to int [optional]
         grid = [[0 for _ in range(m + 1)] for _ in nums]
         
-        
+        ### Knapsack algorithm
         # v[i, w] = max( v[i - 1, w], v[i - 1, w - w[i]] + p[i] )
         
         for i, row in enumerate(grid):
@@ -34,7 +33,4 @@ class Solution:
                 if(grid[i][j] == m): #half found, terminate early.
                     return True
                 
-        return grid[-1][-1] == m
-                
-                
-            
+        return False     
