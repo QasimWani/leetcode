@@ -7,8 +7,8 @@
 class Solution:
     def mergeTrees(self, t1: TreeNode, t2: TreeNode) -> TreeNode:
         #the idea is quite simple, perform a recursive BFS on one of the trees and add the values on each call.
-        #Time: O(n + m); n = number of nodes in t1, m = number of nodes in t2
-        #Space: O(n + m). Why? Because we're performing recursive calls onto the stack.
+        #Time: O(n), n = min(number of nodes in t1, number of nodes in t2)
+        #Space: O(n)
         
         if(t1 is None):
             return t2
