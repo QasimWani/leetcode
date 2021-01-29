@@ -6,9 +6,9 @@
 #         self.right = right
 class Solution:
     def maxDepth(self, root: TreeNode) -> int:
-        #perform DFS and have running counter of max height
+        #perform DFS and have recursive counter of max height
         #Time = O(n)
-        #Space = O(logn)
+        #Space = O(logn) best case; O(N) worse case
         
         if(root is None):
             return 0
