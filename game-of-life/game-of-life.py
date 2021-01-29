@@ -10,6 +10,10 @@ class Solution:
         #on board parameter. That way, concurrent modifications don't alter the state of board
         #from there, it's just embedding the rules.
         #Time = Space = O(m * n).
+        #The solution for Constant space is to have special code declaring what the previous
+        #value of each cell was based on new update, i.e 2 represents previously dead & -1 
+        #previously alive. 
+        #After update, we reset all 2's to 1 and all -1 to 0.
         
         self.memory = copy.deepcopy(board)
 
@@ -17,19 +21,15 @@ class Solution:
         
         #RULES
         #A. 1 -> 0, if less than 2 or more than 3 live neighbors
-        
         #B. 1 -> 1, if 2 or 3 live neighbors
-        
         #C. 0 -> 1, if exactly 3 live neighbors
-        
         #D. 0 -> 0, if A, B, C are false.
+        
         for i in range(m):
             for j in range(n):
                 num_neighbors = self.getNeighbors(i, j)
                 if(num_neighbors < 2 or num_neighbors > 3 and board[i][j] == 1):
                     board[i][j] = 0
-                # elif(num_neighbors < 3 and board[i][j] == 1):
-                #     continue
                 elif(num_neighbors == 3 and board[i][j] == 0):
                     board[i][j] = 1
         
@@ -52,8 +52,3 @@ class Solution:
                     neighbors += 1
 
         return neighbors
-                    
-            
-
-        
-        
