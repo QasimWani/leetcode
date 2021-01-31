@@ -1,3 +1,4 @@
+[Discussion Post (created on 31/0/2021 at 13:57)](https://leetcode.com/problems/find-the-duplicate-number/solution/)  
 <h2>287. Find the Duplicate Number</h2><h3>Medium</h3><hr><div><p>Given an array of integers <code>nums</code> containing&nbsp;<code>n + 1</code> integers where each integer is in the range <code>[1, n]</code> inclusive.</p>
 
 <p>There is only <strong>one repeated number</strong> in <code>nums</code>, return <em>this&nbsp;repeated&nbsp;number</em>.</p>
