@@ -1,5 +1,5 @@
-#Time : O(m + n), m = number of rows; n = number of columns
-#Space: O(m + n), m = number of rows; n = number of columns
+#Time : O(m * n), m = number of rows; n = number of columns
+#Space: O(m * n), m = number of rows; n = number of columns
 class Solution:
     def uniquePaths(self, m: int, n: int) -> int:
         #answer the question: how many ways can you reach a point i, j? Solving for subproblems can lead to final solution of m x n.
