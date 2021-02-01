@@ -1,3 +1,5 @@
+[Discussion Post (created on 31/0/2021 at 23:21)](https://leetcode.com/problems/unique-paths-ii/discuss/1044567/Easy-DP-O(n*m)-Python-solution-with-comments!)  
+
 <h2>63. Unique Paths II</h2><h3>Medium</h3><hr><div><p>A robot is located at the top-left corner of a <code>m x n</code> grid (marked 'Start' in the diagram below).</p>
 
 <p>The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked 'Finish' in the diagram below).</p>
