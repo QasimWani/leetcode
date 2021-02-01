@@ -1,4 +1,6 @@
-#Time = Space = O(m * n); m = number of rows, n = number of columns
+#Time = O(m * n); m = number of rows, n = number of columns
+#Space = O(1), handling in-place.
+
 class Solution:
     def uniquePathsWithObstacles(self, obstacleGrid: List[List[int]]) -> int:
         #similar to Unique Paths I, except now we reset paths whenever we hit an obstacle.
