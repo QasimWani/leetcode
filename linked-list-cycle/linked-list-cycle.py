@@ -11,6 +11,9 @@ class Solution:
         #if fast pointer ever equals the slow pointer, then that means
         #that the fast pointer had to make a cycle to reach the slow pointers'
         #position. Therefore, implying a cycle in the linkedList.
+        
+        #Time: O(n); Space: O(1)
+        
         slow = fast = head
         if head is None:
             return False
@@ -22,4 +25,3 @@ class Solution:
             slow = slow.next
 
         return False
-            
