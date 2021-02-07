@@ -13,9 +13,9 @@ class Solution:
         #Time: O(n)
         
         node = head
-        while node is not None:
-            curr = node.val
-            while node.next is not None and node.next.val == curr:
+        while node is not None and node.next is not None:
+            if node.next.val == node.val:
                 node.next = node.next.next
-            node = node.next
+            else:
+                node = node.next
         return head
