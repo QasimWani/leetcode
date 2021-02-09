@@ -1,3 +1,4 @@
+[Discussion Post (created on 9/1/2021 at 4:31)](https://leetcode.com/problems/intersection-of-two-arrays/solution/)  
 <h2>349. Intersection of Two Arrays</h2><h3>Easy</h3><hr><div><p>Given two arrays, write a function to compute their intersection.</p>
 
 <p><strong>Example 1:</strong></p>
