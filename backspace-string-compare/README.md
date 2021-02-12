@@ -1,3 +1,4 @@
+[Discussion Post (created on 12/1/2021 at 7:26)](https://leetcode.com/problems/backspace-string-compare/submissions/)  
 <h2>844. Backspace String Compare</h2><h3>Easy</h3><hr><div><p>Given two&nbsp;strings&nbsp;<code>S</code>&nbsp;and <code>T</code>,&nbsp;return if they are equal when both are typed into empty text editors. <code>#</code> means a backspace character.</p>
 
 <p>Note that after&nbsp;backspacing an empty text, the text will continue empty.</p>
