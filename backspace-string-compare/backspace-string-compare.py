@@ -1,27 +1,19 @@
 class Solution:
     def backspaceCompare(self, S: str, T: str) -> bool:
         #get new S and T and compare is new S = new T
-        s = list(S[0]) if S[0] != '#' else []
-        t = list(T[0]) if T[0] != '#' else []
+        #Time: O(n + m), where n = len(S) and m = len(T)
+        #Space: O(n + m)
+        def solve(X):
+            x = list(X[0]) if X[0] != '#' else []
+            i = len(x)
+            for char in X[1:]:
+                if char == '#' and x:
+                    i -= 1
+                    x.pop(i)
+                elif(char != '#'):
+                    x.append(char)
+                    i += 1
+            return x
         
-        
-        i = len(s)
-        for char in S[1:]:
-            if char == '#' and s:
-                i -= 1
-                s.pop(i)
-            elif(char != '#'):
-                s.append(char)
-                i += 1
-                
-        i = len(t)
-        for char in T[1:]:
-            if char == '#' and t:
-                i -= 1
-                t.pop(i)
-            elif(char != '#'):
-                t.append(char)
-                i += 1
-
-        return s == t
+        return solve(S) == solve(T)
         
