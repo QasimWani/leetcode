@@ -13,6 +13,5 @@ class Solution:
             else: #move right inward, i.e right -= 1
                 right -= 1
             #recalculate total area
-            print(left, right)
             area = max(area, (right - left) * min(height[left], height[right]))
         return area
