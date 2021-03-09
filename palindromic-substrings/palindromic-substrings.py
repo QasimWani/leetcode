@@ -4,7 +4,7 @@ class Solution:
         #let's find the largest palindrome first. and then find the second largest palindrome, and so on...
         #until we hit the smallest character which is also a palindrome.
         
-        #Time: O(N)
+        #Time: O(N^3)
         #Space: O(1)
         
         #utility function
