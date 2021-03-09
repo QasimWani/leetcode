@@ -10,6 +10,9 @@ class Solution:
         #set start to end, and end to current end position, and repeat this process. we return all the elements
         #from last start thru end. an alternative could be do simply delete all start elements once we're done
         #with one level.
+        
+        #Time = Space = O(3^n x 4^m) where n and m are the digits that map to 3 and 4 letters in the keypad, repesectively.
+        
         if not digits:
             return []
         
