@@ -22,7 +22,7 @@ class Solution:
         i += 1
         while i < len(digits):
             for x in range(start, end):
-                for char in list(keypad[int(digits[i])]):
+                for char in list(keypad[int(digits[i])]): #constant 3-4 iterations.
                     sets.append(sets[x] + char)
             start = end
             end = len(sets)
