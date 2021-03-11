@@ -8,7 +8,7 @@ class Solution:
         #or, all character frequencies are even (ex. racecar).
         
         #Time: O(N), where n is the length of the string, s
-        #Space: O(N), where n is the number of unique characters in s. worst case, N = len(s)
+        #Space: O(1). note that the maximum capacity is bounded by ASCII/unicode, so it's technically constant space.
         
         table = {}
         for char in s:
