@@ -1,3 +1,4 @@
+[Discussion Post (created on 13/2/2021 at 18:51)](https://leetcode.com/problems/set-matrix-zeroes/solution/)  
 <h2>73. Set Matrix Zeroes</h2><h3>Medium</h3><hr><div><p>Given an&nbsp;<code><em>m</em> x <em>n</em></code> matrix. If an element is <strong>0</strong>, set its entire row and column to <strong>0</strong>. Do it <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank"><strong>in-place</strong></a>.</p>
 
 <p><strong>Follow up:</strong></p>
