@@ -6,6 +6,10 @@ class Solution:
         # two-pass, constant space solution using special key. The idea is as follows: whenever you find a '0', replace that row and column with 'x'
         # for all elements not equal to '0'. At the end of this operation you'll have replaced all rows and columns where 0 was present with an x.
         # the matrix now has elements, 0, and x's. In the second pass, replace all x's with 0. This will be O(m * n) time but constant space.
+        
+        #Time : O(M x N x Z), where M = number of rows, N = number of columns, and Z = number of zeroes.
+        #Space: O(1)
+        
         m, n = len(matrix), len(matrix[0]) #row, col
         for i in range(m):
             for j in range(n):
@@ -14,6 +18,7 @@ class Solution:
                     for col, elem in enumerate(matrix[i]):
                         if elem != 0:
                             matrix[i][col] = 'x'
+                    
                     #column operation
                     for row in range(m):
                         if matrix[row][j] != 0:
