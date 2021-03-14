@@ -5,24 +5,28 @@
 #         self.next = next
 class Solution:
     def removeNthFromEnd(self, head: ListNode, k: int) -> ListNode:
-        #One pass algorithm implementation
+        #simple one-pass algorithm. have 2 pointers. the first pointer iterates continously.
+        #the second pointer starts iterating once the first pointer crosses k nodes. the second pointer
+        #stops when the first pointer hits the end, thereby making the second pointer stop at N - k - 1 node.
+        #so, the second pointer removes the next node.
+        
         #Time: O(n)
         #Space: O(1)
-        first = second = head
-        n = 0
-        while(second is not None):
-            second = second.next
-            n += 1
-            if(n > k + 1):
-                first = first.next
-
-        #at this point, first and second nodes are k nodes apart
-        if(n == k):#remove head
-            if(n == 1):
-                return None
-            
-            first.val = first.next.val
-            first.next = first.next.next
-            return first
-        first.next = first.next.next
+        
+        current = runner = head
+        i = 0
+        while current is not None:
+            current = current.next
+            i += 1
+            if i > k + 1: #start moving the second pointer
+                runner = runner.next
+        
+        #remove runner.next
+        if i == k:#remove head
+            return None if i == 1 else runner.next
+        
+        runner.next = runner.next.next if runner.next.next is not None else None
         return head
+    
+    
+            
