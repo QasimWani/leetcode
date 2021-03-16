@@ -5,25 +5,34 @@
 #         self.next = next
 class Solution:
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
+        list = ListNode()
+        head = list
         
-        dl1, dl2 = '', '' #represents the digits of l1 and l2 lists, respectively
-        
-        #iterate through each list and get the digits
-        while(l1 is not None):
-            dl1 += str(l1.val)
-            l1 = l1.next
+        while l1 or l2:
+            a = b = 0
             
-        while(l2 is not None):
-            dl2 += str(l2.val)
-            l2 = l2.next
-        
-        sum = str(int(dl1[::-1]) + int(dl2[::-1]))
+            if l1:
+                a = l1.val
+                l1 = l1.next
+            if l2:
+                b = l2.val
+                l2 = l2.next
+            
+            sum = list.val + a + b
+            
+            carry = sum // 10
+            
+            list.val = sum % 10
+            
 
-        head = ListNode()
-        temp = head
-        for i, char in enumerate(sum[::-1]):
-            temp.val = char
-            temp.next = ListNode() if i < len(sum) - 1 else None
-            temp = temp.next
+            list.next = ListNode(carry) if carry or l1 or l2 else None
+            
+            list = list.next
             
         return head
+            
+            
+            
+        
+    
+    
