@@ -5,6 +5,9 @@
 #         self.next = next
 class Solution:
     def isPalindrome(self, head: ListNode) -> bool:
+        #Time: O(N)
+        #Space: O(1) done in-place
+        
         #the idea is to get to the half of the list, reverse the second half, and compare if it equals the first half
         slow = fast = head
         
@@ -21,7 +24,7 @@ class Solution:
             prev = temp
         
         #at this point, we've now reversed the second half of the list. we now check to see if the first half matches prev.
-        while head and prev:
+        while prev:
             if head.val != prev.val:
                 return False
             head = head.next
