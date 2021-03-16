@@ -5,14 +5,14 @@
 #         self.next = next
 class Solution:
     def isPalindrome(self, head: ListNode) -> bool:
-        #the idea is to reverse the second half and check to see if it equals the second half.
+        #the idea is to get to the half of the list, reverse the second half, and compare if it equals the first half
         slow = fast = head
-        #find the middle node
-        while fast and fast.next is not None:
-            fast = fast.next.next
-            slow = slow.next #1/2 speed of fast
         
-        #reverse second half
+        while fast and fast.next:
+            fast = fast.next.next
+            slow = slow.next
+        
+        #at this point, the slow pointer is at the half of the list. We now reverse the second half.
         prev = None
         while slow:
             temp = slow
@@ -20,10 +20,10 @@ class Solution:
             temp.next = prev
             prev = temp
         
-        #now, simply compare the first and second halfs
-        while prev is not None:
-            if prev.val != head.val:
+        #at this point, we've now reversed the second half of the list. we now check to see if the first half matches prev.
+        while head and prev:
+            if head.val != prev.val:
                 return False
-            prev = prev.next
             head = head.next
+            prev = prev.next
         return True
