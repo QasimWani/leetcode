@@ -18,8 +18,8 @@ class Solution:
         if head is None:
             return False
         
-        while fast is not None:
-            fast = fast.next.next if fast.next is not None else None
+        while fast and fast.next:
+            fast = fast.next.next
             if(slow == fast):
                 return True
             slow = slow.next
