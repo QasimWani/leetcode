@@ -8,6 +8,10 @@
 class Solution:
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
         #Basically finding the lowest common ancestor of BST but now with a binary tree, we just use generalized DFS to find the path for each node, p and q.
+        
+        #Time: O(N)
+        #Space: O(N)
+        
         path_p = self.generate_path(root, p, [root])
         path_q = self.generate_path(root, q, [root])
         
