@@ -25,9 +25,7 @@ class Solution:
         arr = []
         #compare left and right pointer values. if squared (nums[left] < nums[right]) add all right pointer values while that condition is true.
         #once it's false, do the opposite, i.e. move the left pointer outwards until right number < left number. continue this process until both hit an edge.
-        counter = 0
-        while counter < len(nums):
-            
+        while right - left <= len(nums):
             mod_left = float('inf')
             mod_right = float('inf')
             if left >= 0:
@@ -36,8 +34,6 @@ class Solution:
             if right < len(nums):
                 mod_right = nums[right]**2
             
-            # print(mod_left, mod_right)
-            
             if mod_left <= mod_right and mod_left < float('inf'):
                 arr.append(mod_left)
                 left -= 1
@@ -45,6 +41,4 @@ class Solution:
                 arr.append(mod_right)
                 right += 1
             
-            counter += 1
-
         return arr
