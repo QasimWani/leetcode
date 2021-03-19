@@ -8,8 +8,8 @@ class Solution:
     def rightSideView(self, root: TreeNode) -> List[int]:
         #BFS with levels using for loop trick.
         
-        #Time: O(N)
-        #Space: O(N)
+        #Time: O(N), where N is the number of nodes in the tree
+        #Space: O(H), where H is the height of the tree
         
         levels = []
         if not root:
