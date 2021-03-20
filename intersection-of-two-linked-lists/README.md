@@ -1,3 +1,4 @@
+[Discussion Post (created on 20/2/2021 at 18:55)](https://leetcode.com/problems/intersection-of-two-linked-lists/solution/)  
 <h2>160. Intersection of Two Linked Lists</h2><h3>Easy</h3><hr><div><p>Given the heads of two singly linked-lists <code>headA</code> and <code>headB</code>, return <em>the node at which the two lists intersect</em>. If the two linked lists have no intersection at all, return <code>null</code>.</p>
 
 <p>For example, the following two linked lists begin to intersect at node <code>c1</code>:</p>
