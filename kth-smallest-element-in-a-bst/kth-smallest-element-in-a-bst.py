@@ -7,6 +7,10 @@
 class Solution:
     def kthSmallest(self, root: TreeNode, k: int) -> int:
         #using inorder traversal we can find the kth smallest node in the BST.
+        
+        #Time: O(n) where n is the number of nodes
+        #Space: O(n)
+        
         array = []
         self.traversal(root, array)
         return array[k - 1]
