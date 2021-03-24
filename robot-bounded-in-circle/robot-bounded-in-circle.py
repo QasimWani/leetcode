@@ -4,7 +4,10 @@ class Solution:
         #a cycle will exist at most 4 instruction cycles. just keeping track of coordinates will
         #do the trick.
         
-        #default
+        #Time: O(4 x N) = O(N) where N is the number of instructions
+        #Space: O(1)
+        
+        #default case
         move_x = True
         move_y = False
 
