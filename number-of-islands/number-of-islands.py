@@ -6,8 +6,8 @@ class Solution:
         #of all elements in the grid with an 'x' where the first island was supposed to be. We now continue the process until we find the next '1' in the grid.
         #We can optimize the solution by using memoization and caching in our nodes but either way, this is the optimal solution in terms of time complexity.
         
-        #Time: O(v + e) where v is the number of vertices and e is the number of edges.
-        #Space: O(v)
+        #Time: O(m x n)
+        #Space: O(m x n)
         
         m, n = len(grid), len(grid[0])
         
