@@ -9,8 +9,8 @@ class Solution:
         #n is the length of the larger list and k is the length of the smaller list. While traversing, simply store the sum in an array, ignoring
         #any carry calculations. After this, we traverse the result from the end to get the refined output and store it accordingly. After this,
         #just reconstruct the List.
-        #Time: O(N) where N is the number of nodes in the larger linked list.
-        #Space: O(N)
+        #Time: O(N1 + N2) where N1 and N2 are the sizes of the 2 lists
+        #Space: O(max(N1, N2))
         
         num1, num2 = self.getNodes(l1), self.getNodes(l2)
         
