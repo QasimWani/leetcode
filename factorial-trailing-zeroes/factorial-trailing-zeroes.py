@@ -4,7 +4,7 @@ class Solution:
         #trailing zeros.
         
         #Time: O(n)
-        #Space: O(n) aux mem
+        #Space: O(n!) ~ O(n^2)
         
         if n < 1:
             return 0
