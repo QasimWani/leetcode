@@ -1,3 +1,4 @@
+[Discussion Post (created on 7/3/2021 at 23:49)](https://leetcode.com/problems/add-binary/solution/)  
 <h2>67. Add Binary</h2><h3>Easy</h3><hr><div><p>Given two binary strings <code>a</code> and <code>b</code>, return <em>their sum as a binary string</em>.</p>
 
 <p>&nbsp;</p>
