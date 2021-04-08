@@ -1,6 +1,9 @@
 class Solution:
     def addStrings(self, num1: str, num2: str) -> str:
         #add up individual characters and take in the carry.
+        #Time: O(max(n, m)) where n and m are the lengths of the strings a and b, respectively.
+        #Space: O(max(n, m))
+        
         if len(num1) < len(num2):
             num1, num2 = num2, num1
         
