@@ -28,4 +28,5 @@ class Solution:
                 result.append([start, end])
                 start, end = starts[indices[i]], ends[indices[i]]
             
+            
         return result + [[start, end]]
