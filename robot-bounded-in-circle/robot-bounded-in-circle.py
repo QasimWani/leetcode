@@ -10,10 +10,8 @@ class Solution:
         #default case
         move_x = True
         move_y = False
-
         x, y = 0, 0
         constant = 1
-        
         for _ in range(4):
             for command in instructions:
                 if command == 'G':
