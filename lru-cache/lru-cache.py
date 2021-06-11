@@ -1,7 +1,6 @@
 from collections import OrderedDict
 #Time: O(1)
 #Space: O(capacity)
-
 class LRUCache(OrderedDict):
     def __init__(self, capacity: int):
         self.capacity = capacity
