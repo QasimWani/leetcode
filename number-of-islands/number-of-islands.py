@@ -10,7 +10,6 @@ class Solution:
         #Space: O(m x n)
         
         m, n = len(grid), len(grid[0])
-        
         counter = 0
         
         for i in range(m):
