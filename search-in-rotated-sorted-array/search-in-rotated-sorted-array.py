@@ -1,32 +1,32 @@
 class Solution:
-    def search(self, nums: List[int], target: int) -> int:
-        ### so the idea is that the pivot now the middle element of nums.
-        ### using this idea, we can first check which side of the array must 
-        ### the target belong to. and once that is done, we can implement the 
-        ### regular binary search to find the target element, if it exists.
-        
-        ### Time: O(log(n)) ; Space : O(1), done in-place with constant auxillary space
-        
-        if(not nums):
-            return - 1
-        
-        left, right = 0, len(nums) - 1
-        
-        while(left <= right):
-            mid_idx = (left + right) // 2
-            
-            if(nums[mid_idx] == target):
-                return mid_idx
-            
-            if(nums[left] <= nums[mid_idx]):
-                if nums[left] <= target <= nums[mid_idx]:
-                    right = mid_idx - 1
-                else:
-                    left = mid_idx + 1
-            else:
-                if nums[mid_idx] <= target <= nums[right]:
-                    left = mid_idx + 1
-                else:
-                    right = mid_idx - 1
-        
-        return -1
+    def search(self, nums: List[int], target: int) -> int:
+        # duo-splitting algorithm. Time: O(n).
+        # doubly binary search. essentially, we're splitting into parts with a left and right pointer just like regular binary search. but instead of deciding between a single pivot, we now decide between 2 ranges.
+        # we know that if left number and pivot number are in ascending order, then the subarray MUST be in ascending order. and the right subarray must be the one where the rotation happens.
+        # if our target is in the left subarray, simple binary search will do the trick!
+        # if our target in in the right subarray, we should continue to use the duo-splitting algorithm
+        # note that middle pivot will have only 1 subarray at max with rotated subarray.
+        
+        left, right = 0, len(nums) - 1 # define pointers
+
+        while left <= right:
+            
+            middle = (right + left) // 2 # get middle index
+            
+            # check if any of the pointers match to target. only need to do for middle, but this is just sanity check for now...
+            if nums[middle] == target:
+                return middle
+            
+            if nums[left] <= nums[middle]: #sorted left section
+                if nums[left] <= target <= nums[middle]:
+                    right = middle - 1
+                else:
+                    left = middle + 1
+                    
+            else: # sorted right section
+                if nums[middle] <= target <= nums[right]:
+                    left = middle + 1
+                else:
+                    right = middle - 1
+        return -1
+                    
