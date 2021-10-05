@@ -3,7 +3,7 @@ class Solution:
         # since an anagram is multiple representation of the same word, sorting them should produce the same word.
         # so, a group of anagrams should be the same once sorted. so, we can easily group them together based on this key.
 
-        # Time: O(n log m), where n is the total number of anagrams and m is the longest anagram
+        # Time: O(n mlogm), where n is the total number of anagrams and m is the longest anagram
         # Space: O(n) where n is the total number of anagrams
         
         table = {} # key = sorted anagram, value = [original anagram]
