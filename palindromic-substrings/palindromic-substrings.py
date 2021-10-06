@@ -1,29 +1,26 @@
 class Solution:
     def countSubstrings(self, s: str) -> int:
-        #basically a variation of max palindrome substring problem.
-        #let's find the largest palindrome first. and then find the second largest palindrome, and so on...
-        #until we hit the smallest character which is also a palindrome.
+        # naive algorithm. generate all possible substrings and check if that substring is a palindrome or not. the time complexity for this would be O(n^3)
+        # efficient pruning will be to look at previous substring. if previous substring is not a palindrome, will the addition of new character make it a palindrome?
+        # now that i think about it, the best way to solve it is by finding maximum length palindrome. if we find a max palindromic substring, we effectively have searched for all possible contiguous palindromes.
+        # instead of returning max palindrome, we just add each new palindrome we find to a dictionary.
         
-        #Time: O(N^3)
-        #Space: O(1)
+        # Time : O(n^2)
+        # Space: O(1)
         
-        #utility function
-        def isPalindrome(string):
-            return string == string[::-1]
+        result = 0
         
-        counter = 0
-        
-        level = 0
-        
-        while level < len(s):
-            l, r = level, 0 #define left and right pointers
-            while l >= 0:
-                px = isPalindrome(s[l: len(s) - r])
-                if px:
-                    counter += 1
-                l -= 1
-                r += 1
+        for center in range(len(s)):
+            i, j = center, center # starting at character
+            while i >= 0 and j < len(s) and s[i] == s[j]:
+                result += 1
+                i -= 1
+                j += 1
             
-            level += 1
-                
-        return counter
+            i, j = center, center + 1 # starting at pivot
+            while i >= 0 and j < len(s) and s[i] == s[j]:
+                result += 1
+                i -= 1
+                j += 1
+        return result
+            
