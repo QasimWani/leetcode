@@ -1,0 +1,1 @@
+super simple solution. O(n)
