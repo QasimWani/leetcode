@@ -9,6 +9,7 @@ class Solution:
             if target - num in table:
                 return table[target - num], i
             table[num] = i
+            
         return None
 
                 
